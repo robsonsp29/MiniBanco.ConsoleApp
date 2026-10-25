@@ -234,11 +234,14 @@ public class Program
 
         var conta = BuscarConta();
         if (conta == null) return;
-        Console.WriteLine("");
+        Console.WriteLine("                                                                                                                        ");
         Console.Write("   Valor a sacar: ");
-        if (!decimal.TryParse(Console.ReadLine(), out decimal valor)) { Console.WriteLine("   Valor inválido."); return; }
+        if (!decimal.TryParse(Console.ReadLine(), out decimal valor)) {
+            Console.WriteLine("                                                                                                                    ");
+            Console.WriteLine("   Valor inválido."); return; }
         bool resultado = conta.Sacar(valor);
-        Console.WriteLine(resultado ? "   Saque realizado com sucesso." : "   Saldo insuficiente.");
+        Console.WriteLine("                                                                                                                        ");
+        Console.WriteLine(resultado ? "  Saque realizado com sucesso." : "   Saldo insuficiente.");
     }
 
     static void MostrarExtrato()
@@ -249,7 +252,7 @@ public class Program
         Console.WriteLine("========================================================================================================================");
         Console.WriteLine("                                                                                                                        ");
         Console.WriteLine("                                        Motor de Gestão de Contas Bancárias                                             ");
-        Console.WriteLine("                                                   ( Extrato )                                                          ");
+        Console.WriteLine("                                               ( Extrato da Conta )                                                     ");
         Console.WriteLine("                                                                                                                        ");
         Console.WriteLine("========================================================================================================================");
         Console.WriteLine("                                                                                                                        ");
@@ -262,12 +265,25 @@ public class Program
 
     static void ListarContas()
     {
-        if (contas.Count == 0) { Console.WriteLine("   Nenhuma conta cadastrada."); return; }
-        Console.WriteLine("   Contas cadastradas:");
+        Console.WriteLine("                                                                                        [M1S07] Mini-Projeto Avaliativo ");
+        Console.WriteLine("                                                                                                                        ");
+        Console.WriteLine("========================================================================================================================");
+        Console.WriteLine("                                                                                                                        ");
+        Console.WriteLine("                                        Motor de Gestão de Contas Bancárias                                             ");
+        Console.WriteLine("                                               ( Lista de Conta )                                                       ");
+        Console.WriteLine("                                                                                                                        ");
+        Console.WriteLine("========================================================================================================================");
+        Console.WriteLine("                                                                                                                        ");
+        Console.WriteLine("                                                                                                                        ");
+        if (contas.Count == 0) {
+            Console.WriteLine("   Nenhuma conta cadastrada."); 
+            return; }
+            Console.WriteLine("   Contas cadastradas:");
         foreach (var c in contas)
         {
-            Console.WriteLine("                                                                                                                        ");
-            Console.WriteLine($"   {c.NumeroConta} - {c.NomeTitular} - {c.SaldoConta:C} - {c.GetType().Name}");
+            Console.WriteLine("                                                                                                                    ");
+            Console.WriteLine($"{c.NumeroConta} - {c.NomeTitular} - {c.SaldoConta:C} - {c.GetType().Name}");
+            Console.WriteLine("                                                                                                                    ");
         }
     }
 }
