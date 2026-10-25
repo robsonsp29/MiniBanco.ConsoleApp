@@ -46,9 +46,9 @@ public class Program
 
             if (!int.TryParse(Console.ReadLine(), out int opcao))
             {
-                Console.WriteLine("  Opção inválida, digite uma opção válida.");
+                Console.WriteLine("  Opção está inválida, digite uma opção válida.");
                 Console.WriteLine();
-                Console.WriteLine("  Pressione Enter para continuar...");
+                Console.WriteLine("  Pressione ENTER para continuar...");
                 Console.ReadLine();
                 continue;
             }
@@ -67,12 +67,13 @@ public class Program
 
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine("  " + "  Pressione Enter para continuar...");
+            Console.WriteLine("  " + "  Pressione ENTER para continuar...");
             Console.ReadLine();
         }
     }
 
     public static string GerarNumeroConta() => (nextAccountNumber++).ToString("D6");    
+    
     public static void CriarConta()
     {
         Console.Clear();
